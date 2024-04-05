@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style> body { background-color: #867761; } </style>
+</head>
+<body>
+    <h1>Weather App TEST</h1>
+    <article class="container">
+        <form method="POST">
+            <label for="city">Enter city name:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Search</button>
+        </form>
+    </article>
+    <article class="container">
+        {% if weather_data %}
+            <p>{{ weather_data.city_name }} - {{ weather_data.country_code }}</p>
+            {% if weather_data.temperature > 20 %}
+            <p>
+                Temperature: 
+            </p>
+
+                <p
+                style="color: red"
+                > {{ weather_data.temperature }}</p>
+            {% endif %}
+            {% if weather_data.temperature < 20 %}
+            <p>
+                Temperature: 
+            </p>
+
+                <p
+                style="color: blue"
+
+                >{{ weather_data.temperature }}</p>
+            {% endif %}
+            <p>{{ weather_data.description }}</p>
+
+        {% endif %}
+    </article>
+
+
+</body>
+</html>
